@@ -1,5 +1,11 @@
 version: '2'
 services:
+  dnmonster:
+    image: amouat/dnmonster:1.0
+
+  redis:
+    image: redis:6.2.4
+    
   identidock:
     build: .
     expose:
@@ -9,9 +15,3 @@ services:
     links:
       - dnmonster
       - redis
-
-  dnmonster:
-    image: amouat/dnmonster:1.0
-
-  redis:
-    image: redis:6.2.4
